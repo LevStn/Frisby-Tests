@@ -8,8 +8,12 @@ describe("Day7", () => {
     return frisby
       .get(`https://api.nasa.gov/planetary/apod?${params}`)
       .expect("status", 200)
-      .then((result) => {
-        console.log(result.json);
+      .then((response) => {
+        const filteredResponse = response.json.map((item) => ({
+          title: item.title,
+          url: item.url,
+        }));
+        console.log(filteredResponse);
       });
   });
 
