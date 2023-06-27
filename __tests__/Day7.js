@@ -1,9 +1,10 @@
 const frisby = require("frisby");
-const params = new URLSearchParams({ count: 10, api_key: "DEMO_KEY" });
 
 jest.setTimeout(10000);
 
 describe("Day7", () => {
+  const params = new URLSearchParams({ count: 10, api_key: "DEMO_KEY" });
+  
   it("Check status 200", function () {
     return frisby
       .get(`https://api.nasa.gov/planetary/apod?${params}`)

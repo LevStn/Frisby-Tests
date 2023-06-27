@@ -1,4 +1,5 @@
 const frisby = require("frisby");
+
 describe("Day 9", () => {
   it("Check status", function () {
     const gender = "male";

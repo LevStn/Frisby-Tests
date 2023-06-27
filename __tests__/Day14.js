@@ -1,13 +1,12 @@
 const frisby = require("frisby");
-const Joi = frisby.Joi;
-const token = "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";
+const TOKEN = "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";
 
 describe("Day 14", () => {
   it("Get github repositories", () => {
     return frisby
       .fetch("https://api.github.com/user/repos", {
         headers: {
-          Authorization: `Bearer ${token}`,
+          Authorization: `Bearer ${TOKEN}`,
         },
       })
       .expect("status", 200)

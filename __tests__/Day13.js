@@ -1,5 +1,6 @@
 const frisby = require("frisby");
 const Joi = frisby.Joi;
+jest.setTimeout(10000);
 
 describe("Day 13", () => {
   it("Planets check includes Tatooine", () => {
