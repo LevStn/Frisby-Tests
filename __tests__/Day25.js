@@ -1,7 +1,9 @@
+const { getRandomColor } = require("../randomizer/randomColor.js");
+
 const frisby = require("frisby");
 
 describe("Day 25", () => {
-  const color = "8A0A25";
+  const color = getRandomColor();
   let currentColor;
 
   it("get color", async () => {

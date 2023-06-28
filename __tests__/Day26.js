@@ -1,7 +1,7 @@
 const frisby = require("frisby");
 const cheerio = require("cheerio");
 
-describe("Parse HTML response", () => {
+describe("Day 26", () => {
   it("Should get search results from Bing", async () => {
     const response = await frisby
       .get("https://www.bing.com/search?q=postman")
