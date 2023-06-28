@@ -35,13 +35,14 @@ describe("Day 17", () => {
   const compiledTemplate = handlebars.compile(template);
 
   it("Visualizer", async () => {
-    const result = await frisby
+    const response = await frisby
       .get("https://pokeapi.co/api/v2/type")
-      .expect("status", 200)
-      .then((response) => {
-        const data = response.json;
-        const renderedHTML = compiledTemplate({ response: data.results });
-        console.log(renderedHTML);
-      });
+      .expect("status", 200);
+    const data = response.json;
+    const renderedHTML = compiledTemplate({ response: data.results });
+
+    expect(renderedHTML).toContain("<tr>");
+
+    console.log(renderedHTML);
   });
 });

@@ -1,19 +1,12 @@
+const { API_KEY_TEST } = require("../Properties");
+const COLLECTION_ID = "21688951-2bf76ed1-6d6d-4c6d-b29d-8c6a2a39a00b";
 const frisby = require("frisby");
 const Joi = frisby.Joi;
-const apiKey =
-  "PMAK-64971fa26777880043d889ca-b8be5bbac39859b203fe12ede2b27feb80";
 
-describe("Day4", () => {
-  it("Check status and respose body", function () {
-    return frisby
-      .post("https://api.getpostman.com/collections", {
-        method: "get",
-        headers: {
-          Accept: "aplication/json",
-          "Content-Type": "aplication/json",
-          "x-api-key": apiKey,
-        },
-      })
+describe("Day 4", () => {
+  it("Authorization", async function () {
+    const result = await frisby
+      .get(`https://api.getpostman.com/collections?apikey=${API_KEY_TEST}`)
       .expect("status", 200)
       .expect("jsonTypes", "collections.*", {
         id: Joi.string(),

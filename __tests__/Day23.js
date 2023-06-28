@@ -1,9 +1,10 @@
+const URL = "https://postman-echo.com";
+
 const frisby = require("frisby");
 const fs = require("fs");
 const path = require("path");
-const URL = "https://postman-echo.com";
 
-describe("Day 20", () => {
+describe("Day 23", () => {
   jest.setTimeout(100000);
   it("Geo Map file", async () => {
     const filePath = path.join(__dirname, "..", "geoMap.csv");

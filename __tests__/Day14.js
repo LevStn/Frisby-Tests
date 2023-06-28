@@ -1,17 +1,15 @@
 const frisby = require("frisby");
-const TOKEN = "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";
+const TOKEN = "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";
 
 describe("Day 14", () => {
-  it("Get github repositories", () => {
-    return frisby
+  it("Get github repositories", async () => {
+    const response = await frisby
       .fetch("https://api.github.com/user/repos", {
         headers: {
           Authorization: `Bearer ${TOKEN}`,
         },
       })
-      .expect("status", 200)
-      .then((response) => {
-        console.log(response.json.length);
-      });
+      .expect("status", 200);
+    console.log(response.json.length);
   });
 });

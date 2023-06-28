@@ -1,7 +1,7 @@
 const frisby = require("frisby");
 const Joi = frisby.Joi;
 
-describe("Day6", () => {
+describe("Day 6", () => {
   it("Check response body", function () {
     return frisby
       .get("https://api.chucknorris.io/jokes/random")

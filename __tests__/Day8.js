@@ -1,38 +1,30 @@
 const frisby = require("frisby");
 const Joi = frisby.Joi;
 
-jest.setTimeout(10000);
-
-describe("Day8", () => {
-  it("Check status 200", function () {
-    return frisby
+describe("Day 8", () => {
+  it("Check status 200", async function () {
+    const result = frisby
       .get("https://randomuser.me/api")
-      .expect("status", 200)
-      .then((result) => {
-        console.log(result.json);
-      });
+      .expect("status", 200);
+    console.log(result.json);
   });
 
-  it("Check non-empty response with female gender", function () {
-    return frisby
+  it("Check non-empty response with female gender", async function () {
+    const result = await frisby
       .get("https://randomuser.me/api/?gender=female")
       .expect("status", 200)
-      .then((response) => {
-        console.log(response.json);
-      })
       .expect("jsonTypes", "results.0.gender", Joi.string().valid("female"));
+    console.log(result.json);
   });
 
-  it("Gender and nationality check", function () {
-    return frisby
+  it("Gender and nationality check", async function () {
+    const result = await frisby
       .get("https://randomuser.me/api/?gender=female&nat=fr")
       .expect("status", 200)
-      .then((response) => {
-        console.log(response.json);
-      })
       .expect("jsonTypes", {
         "results.0.gender": Joi.string().valid("female"),
         "results.0.nat": Joi.string().valid("FR"),
       });
+    console.log(result.json);
   });
 });

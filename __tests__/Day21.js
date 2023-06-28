@@ -1,9 +1,9 @@
-const frisby = require("frisby");
+const { API_KEY_TEST } = require("../Properties");
 const BASE_URL = "https://postman-echo.com";
-const API_KEY =
-  "PMAK-64971fa26777880043d889ca-b8be5bbac39859b203fe12ede2b27feb80";
 
-describe("Day 20", () => {
+const frisby = require("frisby");
+
+describe("Day 21", () => {
   const params = new URLSearchParams({
     collectionUid: "649a21ab8e7e312bfea1e035",
   });
@@ -12,7 +12,7 @@ describe("Day 20", () => {
       .setup({
         request: {
           headers: {
-            "x-api-key": API_KEY,
+            "x-api-key": API_KEY_TEST,
           },
         },
       })

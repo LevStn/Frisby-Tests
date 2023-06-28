@@ -1,10 +1,10 @@
-const frisby = require("frisby");
+const { API_KEY_TEST } = require("../Properties");
 const COLLECTIONU_ID = "27982648-129f4e67-3670-4a69-8b62-353db4c90852";
 const ENVIRONMENT_ID = "27982648-0175fa67-e2ad-41a8-97c3-84429d03af59";
 const WORKSPACE_ID = "ed19f89a-e9b9-428f-bbcf-6c2b6fce0026";
 const BASE_URL = "https://postman-echo.com";
-const API_KEY =
-  "PMAK-64971fa26777880043d889ca-b8be5bbac39859b203fe12ede2b27feb80";
+
+const frisby = require("frisby");
 
 describe("Day 12", () => {
   it("Submit", async () => {
@@ -12,7 +12,7 @@ describe("Day 12", () => {
       .setup({
         request: {
           headers: {
-            "x-api-key": API_KEY,
+            "x-api-key": API_KEY_TEST,
           },
         },
       })

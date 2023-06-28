@@ -13,7 +13,7 @@ describe("Day 19", () => {
     }`;
 
     const variables = {
-      name: "Britney Spears",
+      name: "The Beatles",
     };
 
     const response = await frisby
@@ -26,7 +26,9 @@ describe("Day 19", () => {
           variables,
         }),
       })
-      .expect("status", 200);
+      .expect("status", 200)
+      .expect("json", "data.queryArtists[0].name", `${variables.name}`);
+
     console.log(response.json.data);
   });
 });

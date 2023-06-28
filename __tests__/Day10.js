@@ -1,8 +1,7 @@
-const frisby = require("frisby");
+const { API_KEY_TEST } = require("../Properties");
 const COLLECTIONU_UID = "27982648-a23d9aa5-b271-4ef8-9c8d-e4230a93f0bc";
 const BASE_URL = "https://api.getpostman.com/collections";
-const API_KEY =
-  "PMAK-64971fa26777880043d889ca-b8be5bbac39859b203fe12ede2b27feb80";
+const frisby = require("frisby");
 
 describe("Day 10", () => {
   it("Submit", async () => {
@@ -10,7 +9,7 @@ describe("Day 10", () => {
       .setup({
         request: {
           headers: {
-            "x-api-key": API_KEY,
+            "x-api-key": API_KEY_TEST,
           },
         },
       })

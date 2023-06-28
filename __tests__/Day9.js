@@ -1,17 +1,23 @@
 const frisby = require("frisby");
 
 describe("Day 9", () => {
-  it("Check status", function () {
-    const gender = "male";
-    return frisby
-      .post("https://postman-echo.com/post?", {
-        name: "Mr Thomas Jones",
-        email: "thomas.jones@example.com",
-        id: "e7a58de3-2aae-4aad-b324-7178bcadd158",
+  it("Echo the user", async function () {
+    const responseUser = await frisby
+      .get("https://randomuser.me/api")
+      .expect("status", 200);
+
+    const user = responseUser.json.results[0];
+    const userFullname = `${user.name.title} ${user.name.first} ${user.name.last}`;
+    const echoResult = await frisby
+      .post("https://postman-echo.com/post", {
+        name: userFullname,
+        email: user.email,
+        id: user.login.uuid,
       })
       .expect("status", 200)
-      .then((result) => {
-        console.log(result.json);
-      });
+      .expect("json", "json.name", userFullname)
+      .expect("json", "json.email", user.email)
+      .expect("json", "json.id", user.login.uuid);
+    console.log(echoResult.json);
   });
 });
