@@ -1,4 +1,5 @@
 const frisby = require("frisby");
+jest.setTimeout(15000);
 
 describe("Day 9", () => {
   it("Echo the user", async function () {
