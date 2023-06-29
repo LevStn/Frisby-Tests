@@ -1,7 +1,7 @@
 const URL = "https://google.com";
 const frisby = require("frisby");
 
-jest.setTimeout(10000);
+jest.setTimeout(15000);
 
 describe("Day 28", () => {
   it("Response time", async () => {

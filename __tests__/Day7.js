@@ -1,5 +1,7 @@
 const frisby = require("frisby");
 
+jest.setTimeout(15000);
+
 describe("Day 7", () => {
   const params = new URLSearchParams({ count: 10, api_key: "DEMO_KEY" });
 
