@@ -1,8 +1,6 @@
 const URL = "https://google.com";
 const frisby = require("frisby");
 
-jest.setTimeout(15000);
-
 describe("Day 28", () => {
   it("Response time", async () => {
     const response = await frisby.get(URL).expect("status", 200);
@@ -36,5 +34,5 @@ describe("Day 28", () => {
         "Lighthouse Performance Score is not between 90 and 100. Test failed!"
       );
     }
-  });
+  }, 30000);
 });
