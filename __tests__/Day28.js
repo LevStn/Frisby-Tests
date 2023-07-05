@@ -1,6 +1,15 @@
 const URL = "https://google.com";
 const frisby = require("frisby");
 
+frisby.globalSetup({
+  request: {
+    headers: {
+      "content-type": "application/json",
+    },
+    timeout: 30 * 1000,
+  },
+});
+
 describe("Day 28", () => {
   it("Response time", async () => {
     const response = await frisby.get(URL).expect("status", 200);
