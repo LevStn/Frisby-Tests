@@ -1,5 +1,5 @@
 const frisby = require("frisby");
-const TOKEN = "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";
+const TOKEN = api;
 
 describe("Day 14", () => {
   it("Get github repositories", async () => {

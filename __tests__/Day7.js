@@ -3,7 +3,7 @@ const frisby = require("frisby");
 jest.setTimeout(15000);
 
 describe("Day 7", () => {
-  const params = new URLSearchParams({ count: 10, api_key: "DEMO_KEY" });
+  const params = new URLSearchParams({ api_key: "DEMO_KEY", count: 10 });
 
   it("Check status 200", function () {
     return frisby

@@ -1,9 +1,8 @@
 const frisby = require("frisby");
-jest.setTimeout(10000000);
 
 describe("Day 16", () => {
   it("Listing web pages", async () => {
-    let page = 0;
+    let page = 400;
     let status = 200;
 
     while (status == 200) {
