@@ -16,4 +16,4 @@ jobs:
       - name: Run Tests
         run: npm test
         env:
-        TEST_API: ${{secrets.TEST_API}}
+          TEST_API: ${{secrets.TEST_API}}
